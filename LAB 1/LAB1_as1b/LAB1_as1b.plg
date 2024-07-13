@@ -1,0 +1,18 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\1. AMRITA\SEMESTERS\SEM 5\Embedded Systems\Lab\Programs\LAB 1\LAB1_as1b\LAB1_as1b.uvproj
+Project File Date:  10/30/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling LAB1_as1b.s...
+LAB1_as1b.s(16): error: A1163E: Unknown opcode OR , expecting opcode or Macro
+Target not created
+Build target 'Target 1'
+assembling LAB1_as1b.s...
+linking...
+Program Size: Code=36 RO-data=0 RW-data=0 ZI-data=0  
+"LAB1_as1b.axf" - 0 Error(s), 0 Warning(s).

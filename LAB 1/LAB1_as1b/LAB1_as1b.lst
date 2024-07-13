@@ -1,0 +1,53 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             LAB1_as1b , CODE, READONLY
+    2 00000000         
+    3 00000000 E3A0101F        MOV              r1, #0x1f
+    4 00000004 E3A020FF        MOV              r2, #0xff
+    5 00000008 E3A03025        MOV              r3, #0x25
+    6 0000000C E3A04013        MOV              r4, #0x13
+    7 00000010         
+    8 00000010         
+    9 00000010 E0015002        AND              r5, r1, r2
+   10 00000014         
+   11 00000014 E1E03003        MVN              r3, r3
+   12 00000018         
+   13 00000018 E0036004        AND              r6, r3, r4
+   14 0000001C         
+   15 0000001C         
+   16 0000001C E1857006        ORR              r7, r5, r6
+   17 00000020         
+   18 00000020 EAFFFFFE 
+                       e       b                e
+   19 00000024                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork -oLAB1_as1b.o -IC:
+\Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=LAB1_as1b.lst LAB1_as1
+b.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LAB1_as1b 00000000
+
+Symbol: LAB1_as1b
+   Definitions
+      At line 1 in file LAB1_as1b.s
+   Uses
+      None
+Comment: LAB1_as1b unused
+e 00000020
+
+Symbol: e
+   Definitions
+      At line 18 in file LAB1_as1b.s
+   Uses
+      At line 18 in file LAB1_as1b.s
+Comment: e used once
+2 symbols
+322 symbols in table

@@ -1,0 +1,132 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;add two 32-bit numbers stored in memory location “value
+                       1” and “value2”. 
+    2 00000000         ;Store the result in a memory location “result”.
+    3 00000000         
+    4 00000000         
+    5 00000000         ;ASSIGNING LABELS TO THE RELEVANT *MEMORY LOCATIONS*
+    6 00000000                 AREA             data1 , DATA , READONLY
+    7 00000000         ;DCD (Define Constant Doubleword) directive is used to a
+                       llocate memory space and initialize it with a 32-bit (4-
+                       byte) doubleword constant.
+    8 00000000 00000043 
+                       value1  dcd              0x43        ;memory LOCATION of
+                                                             operand1
+    9 00000004 00000045 
+                       value2  dcd              0x45        ;memory LOCATION of
+                                                             operand2
+   10 00000008         
+   11 00000008                 AREA             data2, DATA, READWRITE
+   12 00000000 00000000 
+                       result  dcd              0x00        ;memory LOCATION of
+                                                             the result
+   13 00000004         
+   14 00000004         
+   15 00000004         ;COMPUTATION IN THE *REGISTERS*
+   16 00000004                 AREA             exp , CODE, READONLY
+   17 00000000 E59F0018        ldr              r0, =value1 ;ADDRESS OF value1
+   18 00000004 E59F1018        ldr              r1, =value2 ;ADDRESS OF value2
+   19 00000008         
+   20 00000008 E5902000        ldr              r2, [r0]    ;VALUE AT MEM LOCAT
+                                                            ION POINTED TO BY r
+                                                            0
+   21 0000000C E5913000        ldr              r3, [r1]    ;VALUE AT MEM LOCAT
+                                                            ION POINTED TO BY r
+                                                            1
+   22 00000010         
+   23 00000010 E0824003        add              r4, r2, r3
+   24 00000014         
+   25 00000014 E59F500C        ldr              r5, =result
+   26 00000018 E5854000        str              r4, [r5]
+   27 0000001C         
+   28 0000001C EAFFFFFE 
+                       e       b                e
+   29 00000020                 end
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab3_qn1.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab3_qn1.lst lab3_qn1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 6 in file lab3_qn1.s
+   Uses
+      None
+Comment: data1 unused
+value1 00000000
+
+Symbol: value1
+   Definitions
+      At line 8 in file lab3_qn1.s
+   Uses
+      At line 17 in file lab3_qn1.s
+Comment: value1 used once
+value2 00000004
+
+Symbol: value2
+   Definitions
+      At line 9 in file lab3_qn1.s
+   Uses
+      At line 18 in file lab3_qn1.s
+Comment: value2 used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 11 in file lab3_qn1.s
+   Uses
+      None
+Comment: data2 unused
+result 00000000
+
+Symbol: result
+   Definitions
+      At line 12 in file lab3_qn1.s
+   Uses
+      At line 25 in file lab3_qn1.s
+Comment: result used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 0000001C
+
+Symbol: e
+   Definitions
+      At line 28 in file lab3_qn1.s
+   Uses
+      At line 28 in file lab3_qn1.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 16 in file lab3_qn1.s
+   Uses
+      None
+Comment: exp unused
+2 symbols
+329 symbols in table

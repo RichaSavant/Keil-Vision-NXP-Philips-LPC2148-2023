@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\1. AMRITA\SEMESTERS\SEM 5\Embedded Systems\Lab\Programs\LAB 7\2WAY_SWITCH\2way_switch.uvproj
+Project File Date:  12/22/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling 2way_switch.c...
+2way_switch.c(16): error:  #65: expected a ";"
+2way_switch.c(18): error:  #65: expected a ";"
+2way_switch.c(20): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(20): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=572 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(21): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=572 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(21): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=568 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(21): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=576 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(25): error:  #127: expected a statement
+2way_switch.c(31): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(25): error:  #127: expected a statement
+2way_switch.c(31): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(25): error:  #127: expected a statement
+2way_switch.c(30): warning:  #12-D: parsing restarts here after previous syntax error
+2way_switch.c(33): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(35): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=628 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(35): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=628 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(31): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=608 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(25): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=576 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(43): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=672 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(19): error:  #158: expression must be an lvalue or a function designator
+2way_switch.c(20): error:  #65: expected a ";"
+2way_switch.c(24): error:  #127: expected a statement
+2way_switch.c(30): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(19): error:  #158: expression must be an lvalue or a function designator
+2way_switch.c(20): error:  #65: expected a ";"
+2way_switch.c(26): warning:  #12-D: parsing restarts here after previous syntax error
+2way_switch.c(34): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(34): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=652 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(28): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=652 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(34): warning:  #111-D: statement is unreachable
+2way_switch.c(35): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=688 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(34): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=652 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(45): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=672 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 2way_switch.c...
+2way_switch.c(35): warning:  #111-D: statement is unreachable
+linking...
+Program Size: Code=628 RO-data=16 RW-data=0 ZI-data=1256  
+"2way_switch.axf" - 0 Error(s), 1 Warning(s).

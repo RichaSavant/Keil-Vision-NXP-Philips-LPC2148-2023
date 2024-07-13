@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC\Philips" -o "lab9_eg2.o" --omf_browse "lab9_eg2.crf" --depend "lab9_eg2.d" "lab9_eg2.c"

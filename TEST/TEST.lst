@@ -1,0 +1,29 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Moving immediate number to register.
+    2 00000000                 AREA             test, CODE, READONLY
+    3 00000000 E3A00010        mov              r0, #0x10   ; # prefix for imme
+                                                            diate no.
+    4 00000004                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork -oTEST.o -IC:\Keil
+\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=TEST.lst TEST.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+test 00000000
+
+Symbol: test
+   Definitions
+      At line 2 in file TEST.s
+   Uses
+      None
+Comment: test unused
+1 symbol
+321 symbols in table

@@ -1,0 +1,146 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             data1 , DATA, READONLY
+    2 00000000 01 02 03 
+              04       num     dcb              0x01, 0x02, 0x03, 0x04 ;!!COMMA
+                                                            !! INITIALIZING AN 
+                                                            ARRAY
+    3 00000004 04      len     dcb              0x4
+    4 00000005         
+    5 00000005                 AREA             data2, DATA, READWRITE
+    6 00000000 00      res     dcb              0x00
+    7 00000001         
+    8 00000001                 AREA             exp , CODE, READONLY
+    9 00000000 E59F002C        ldr              r0, =num    ;Address of first e
+                                                            le of array
+   10 00000004 E59F102C        ldr              r1, =len    ;Address where leng
+                                                            th of array value p
+                                                            resent
+   11 00000008 E59F202C        ldr              r2, =res    ;Address of result 
+                                                            destination
+   12 0000000C         
+   13 0000000C E3A03000        mov              r3, #0x00   ;result value regis
+                                                            ter  
+   14 00000010         
+   15 00000010 E5915000        ldr              r5, [r1]    ;Loading len value 
+                                                            into register
+   16 00000014         
+   17 00000014         adding
+   18 00000014 E5D04000        ldrb             r4, [r0]    ;loading one BYTE i
+                                                            nto register
+   19 00000018 E0833004        add              r3, r3, r4
+   20 0000001C E2800001        add              r0, r0, #0x01 ;Incrementing add
+                                                            ress to next byte
+   21 00000020         
+   22 00000020         byte
+   23 00000020 E2455001        sub              r5, r5, #0x01 ;Decrementing len
+                                                            gth by one
+   24 00000024 E3550000        cmp              r5, #0x00
+   25 00000028 1AFFFFF9        bne              adding
+   26 0000002C E5823000        str              r3, [r2]
+   27 00000030 EAFFFFFE 
+                       e       b                e
+   28 00000034                 end
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab3_qn2.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab3_qn2.lst lab3_qn2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 1 in file lab3_qn2.s
+   Uses
+      None
+Comment: data1 unused
+len 00000004
+
+Symbol: len
+   Definitions
+      At line 3 in file lab3_qn2.s
+   Uses
+      At line 10 in file lab3_qn2.s
+Comment: len used once
+num 00000000
+
+Symbol: num
+   Definitions
+      At line 2 in file lab3_qn2.s
+   Uses
+      At line 9 in file lab3_qn2.s
+Comment: num used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 5 in file lab3_qn2.s
+   Uses
+      None
+Comment: data2 unused
+res 00000000
+
+Symbol: res
+   Definitions
+      At line 6 in file lab3_qn2.s
+   Uses
+      At line 11 in file lab3_qn2.s
+Comment: res used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+adding 00000014
+
+Symbol: adding
+   Definitions
+      At line 17 in file lab3_qn2.s
+   Uses
+      At line 25 in file lab3_qn2.s
+Comment: adding used once
+byte 00000020
+
+Symbol: byte
+   Definitions
+      At line 22 in file lab3_qn2.s
+   Uses
+      None
+Comment: byte unused
+e 00000030
+
+Symbol: e
+   Definitions
+      At line 27 in file lab3_qn2.s
+   Uses
+      At line 27 in file lab3_qn2.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 8 in file lab3_qn2.s
+   Uses
+      None
+Comment: exp unused
+4 symbols
+331 symbols in table

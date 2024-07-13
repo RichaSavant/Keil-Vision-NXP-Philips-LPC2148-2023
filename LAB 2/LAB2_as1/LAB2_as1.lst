@@ -1,0 +1,50 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Find the number in r1 is odd or even number.
+    2 00000000         ;If ODD move 0x01 to r2 else move 0x02 to r2. 
+    3 00000000         
+    4 00000000                 AREA             LAB2_as1 , CODE , READONLY
+    5 00000000         
+    6 00000000 E3A01003        mov              r1 , #0x03
+    7 00000004 E3A03000        mov              r3, #0x00
+    8 00000008         
+    9 00000008 E1B050A1        movs             r5, r1, lsr #1
+   10 0000000C 22833001        addcs            r3, r3, #0x01
+   11 00000010         
+   12 00000010 E3530000        cmp              r3 , #0
+   13 00000014 03A02002        moveq            r2 , #0x02
+   14 00000018 13A02001        movne            r2 , #0x01
+   15 0000001C         
+   16 0000001C EAFFFFFE 
+                       e       b                e
+   17 00000020                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork -oLAB2_as1.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=LAB2_as1.lst LAB2_as1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LAB2_as1 00000000
+
+Symbol: LAB2_as1
+   Definitions
+      At line 4 in file LAB2_as1.s
+   Uses
+      None
+Comment: LAB2_as1 unused
+e 0000001C
+
+Symbol: e
+   Definitions
+      At line 16 in file LAB2_as1.s
+   Uses
+      At line 16 in file LAB2_as1.s
+Comment: e used once
+2 symbols
+322 symbols in table

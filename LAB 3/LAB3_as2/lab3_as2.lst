@@ -1,0 +1,122 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Find the number of 0’s in a byte data stored location “
+                       data”. 
+    2 00000000         ;Store the final count in location “count”.
+    3 00000000         
+    4 00000000                 AREA             data1 , DATA, READONLY
+    5 00000000 0F      data    dcb              0x0f
+    6 00000001         
+    7 00000001                 AREA             data2, DATA, READWRITE
+    8 00000000 00      count   dcb              0x00        ;initializing count
+                                                             to 0
+    9 00000001         
+   10 00000001                 AREA             exp, CODE, READONLY
+   11 00000000         
+   12 00000000 E59F0028        ldr              r0 , =data
+   13 00000004 E5901000        ldr              r1, [r0]    ;r1 now has 0x0f
+   14 00000008         
+   15 00000008 E3A02000        mov              r2, #0x00
+   16 0000000C E3A05008        mov              r5, #0x08   ;counter for no. of
+                                                             bits
+   17 00000010         
+   18 00000010 E59F701C        ldr              r7 , =count
+   19 00000014         
+   20 00000014         shift
+   21 00000014 E1B010A1        movs             r1 , r1, lsr #1
+   22 00000018 32822001        addcc            r2, r2, #0x01
+   23 0000001C E2455001        sub              r5, r5, #0x01
+   24 00000020 E3550000        cmp              r5, #0x00
+   25 00000024 1AFFFFFA        bne              shift
+   26 00000028         
+   27 00000028 E5872000        str              r2 , [r7]
+   28 0000002C         
+   29 0000002C EAFFFFFE 
+                       e       b                e
+   30 00000030                 end
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab3_as2.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab3_as2.lst lab3_as2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data 00000000
+
+Symbol: data
+   Definitions
+      At line 5 in file lab3_as2.s
+   Uses
+      At line 12 in file lab3_as2.s
+Comment: data used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 4 in file lab3_as2.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+count 00000000
+
+Symbol: count
+   Definitions
+      At line 8 in file lab3_as2.s
+   Uses
+      At line 18 in file lab3_as2.s
+Comment: count used once
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 7 in file lab3_as2.s
+   Uses
+      None
+Comment: data2 unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 0000002C
+
+Symbol: e
+   Definitions
+      At line 29 in file lab3_as2.s
+   Uses
+      At line 29 in file lab3_as2.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 10 in file lab3_as2.s
+   Uses
+      None
+Comment: exp unused
+shift 00000014
+
+Symbol: shift
+   Definitions
+      At line 20 in file lab3_as2.s
+   Uses
+      At line 25 in file lab3_as2.s
+Comment: shift used once
+3 symbols
+329 symbols in table

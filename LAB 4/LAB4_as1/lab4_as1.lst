@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;find the biggest number in an array of 8-bit number in 
+                       location “num”. 
+    2 00000000         ;Store the result in location “biggest”.
+    3 00000000         
+    4 00000000                 AREA             data1 , DATA , READONLY
+    5 00000000 01 05 02 
+              04 03    num     dcb              0x01, 0x05, 0x02, 0x04, 0x03
+    6 00000005 00 05 00 
+                       len     dcw              0x05
+    7 00000008                 AREA             data2, DATA, READWRITE
+    8 00000000 00      biggest dcb              0x00
+    9 00000001         
+   10 00000001         
+   11 00000001                 AREA             exp , CODE, READONLY
+   12 00000000         
+   13 00000000 E59F0030        ldr              r0, =num    ; pointing to first
+                                                             array ele
+   14 00000004 E5D01000        ldrb             r1, [r0]    ; r1 having value 1
+                                                             initialized as BIG
+                                                            GEST
+   15 00000008         
+   16 00000008 E59F502C        ldr              r5, =len
+   17 0000000C E5956000        ldr              r6, [r5]
+   18 00000010         
+   19 00000010 E59F9028        ldr              r9, =biggest
+   20 00000014         
+   21 00000014         loop
+   22 00000014         
+   23 00000014 E5D03000        ldrb             r3, [r0]
+   24 00000018 E1530002        cmp              r3, r2
+   25 0000001C C1A02003        movgt            r2, r3
+   26 00000020 E2800001        add              r0 , r0, #0x01
+   27 00000024         
+   28 00000024 E2466001        sub              r6, r6, #0x01
+   29 00000028 E3560000        cmp              r6, #0x00
+   30 0000002C 1AFFFFF8        bne              loop
+   31 00000030         
+   32 00000030 E5892000        str              r2, [r9]
+   33 00000034 EAFFFFFE 
+                       e       b                e
+   34 00000038                 end
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab4_as1.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab4_as1.lst lab4_as1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 4 in file lab4_as1.s
+   Uses
+      None
+Comment: data1 unused
+len 00000006
+
+Symbol: len
+   Definitions
+      At line 6 in file lab4_as1.s
+   Uses
+      At line 16 in file lab4_as1.s
+Comment: len used once
+num 00000000
+
+Symbol: num
+   Definitions
+      At line 5 in file lab4_as1.s
+   Uses
+      At line 13 in file lab4_as1.s
+Comment: num used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+biggest 00000000
+
+Symbol: biggest
+   Definitions
+      At line 8 in file lab4_as1.s
+   Uses
+      At line 19 in file lab4_as1.s
+Comment: biggest used once
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 7 in file lab4_as1.s
+   Uses
+      None
+Comment: data2 unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 00000034
+
+Symbol: e
+   Definitions
+      At line 33 in file lab4_as1.s
+   Uses
+      At line 33 in file lab4_as1.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 11 in file lab4_as1.s
+   Uses
+      None
+Comment: exp unused
+loop 00000014
+
+Symbol: loop
+   Definitions
+      At line 21 in file lab4_as1.s
+   Uses
+      At line 30 in file lab4_as1.s
+Comment: loop used once
+3 symbols
+330 symbols in table

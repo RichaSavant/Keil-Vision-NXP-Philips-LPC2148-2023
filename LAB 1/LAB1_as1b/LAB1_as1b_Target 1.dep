@@ -1,0 +1,2 @@
+Dependencies for Project 'LAB1_as1b', Target 'Target 1': (DO NOT MODIFY !)
+F (.\LAB1_as1b.s)(0x653FF2E7)(--device DARMP --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Keil\ARM\INC\Philips" --list "LAB1_as1b.lst" --xref -o "LAB1_as1b.o")

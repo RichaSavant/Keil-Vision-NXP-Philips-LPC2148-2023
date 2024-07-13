@@ -1,0 +1,122 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;find the number of 0’s in a byte data stored 
+    2 00000000         ;location  “data”. 
+    3 00000000         ;Store the final count in location “count”.
+    4 00000000         
+    5 00000000         
+    6 00000000                 AREA             data1, DATA, READONLY
+    7 00000000 0F      data    dcb              0x0f
+    8 00000001         
+    9 00000001                 AREA             data2, DATA, READWRITE
+   10 00000000 00000000 
+                       count   dcd              0x00
+   11 00000004         
+   12 00000004                 AREA             exp, CODE, READONLY
+   13 00000000 E59F0028        ldr              r0, =data
+   14 00000004 E59F1028        ldr              r1, =count
+   15 00000008         
+   16 00000008 E5902000        ldr              r2, [r0]    ;has the value in i
+                                                            t
+   17 0000000C         
+   18 0000000C E3A03008        mov              r3, #0x08   ;count of the numbe
+                                                            r of bits
+   19 00000010 E3A05000        mov              r5, #0x00
+   20 00000014         loop
+   21 00000014 E1B040A4        movs             r4, r4, lsr #1
+   22 00000018 32855001        addcc            r5, r5, #0x01
+   23 0000001C E2433001        sub              r3, r3, #0x01
+   24 00000020 E3530000        cmp              r3, #0x00
+   25 00000024 1AFFFFFA        bne              loop
+   26 00000028         
+   27 00000028 E5815000        str              r5, [r1]
+   28 0000002C EAFFFFFE 
+                       e       b                e
+   29 00000030                 end
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -opractice1.o -IC:
+\Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=practice1.lst practice
+1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data 00000000
+
+Symbol: data
+   Definitions
+      At line 7 in file practice1.s
+   Uses
+      At line 13 in file practice1.s
+Comment: data used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 6 in file practice1.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+count 00000000
+
+Symbol: count
+   Definitions
+      At line 10 in file practice1.s
+   Uses
+      At line 14 in file practice1.s
+Comment: count used once
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 9 in file practice1.s
+   Uses
+      None
+Comment: data2 unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 0000002C
+
+Symbol: e
+   Definitions
+      At line 28 in file practice1.s
+   Uses
+      At line 28 in file practice1.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 12 in file practice1.s
+   Uses
+      None
+Comment: exp unused
+loop 00000014
+
+Symbol: loop
+   Definitions
+      At line 20 in file practice1.s
+   Uses
+      At line 25 in file practice1.s
+Comment: loop used once
+3 symbols
+329 symbols in table

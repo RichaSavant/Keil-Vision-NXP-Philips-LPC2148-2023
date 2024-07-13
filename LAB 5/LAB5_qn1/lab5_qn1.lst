@@ -1,0 +1,119 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Write a ARM assembly language program to find the lengt
+                       h of the string terminated by
+    2 00000000         ;NULL character. The string is stored in memory location
+                        “string”. 
+    3 00000000         ;Store the result in memory location “length”.
+    4 00000000         
+    5 00000000                 AREA             data1, DATA, READONLY
+    6 00000000 41 6D 72 
+              69 74 61 
+              00       string  dcb              "Amrita\0"
+    7 00000007         
+    8 00000007                 AREA             data2, DATA, READWRITE
+    9 00000000 00000000 
+                       length  dcd              0
+   10 00000004         
+   11 00000004                 AREA             exp, CODE, READONLY
+   12 00000000 E59F001C        ldr              r0, =string
+   13 00000004 E59F101C        ldr              r1, =length
+   14 00000008         
+   15 00000008 E3A03000        mov              r3, #0
+   16 0000000C         
+   17 0000000C         loop
+   18 0000000C E4D02001        ldrb             r2, [r0] , #1 ;POST INCREMENT
+   19 00000010 E3520000        cmp              r2, #"\0"
+   20 00000014 12833001        addne            r3, r3, #1
+   21 00000018 1AFFFFFB        bne              loop
+   22 0000001C         
+   23 0000001C E5813000        str              r3, [r1]
+   24 00000020 EAFFFFFE 
+                       e       b                e
+   25 00000024                 end
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab5_qn1.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab5_qn1.lst lab5_qn1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 5 in file lab5_qn1.s
+   Uses
+      None
+Comment: data1 unused
+string 00000000
+
+Symbol: string
+   Definitions
+      At line 6 in file lab5_qn1.s
+   Uses
+      At line 12 in file lab5_qn1.s
+Comment: string used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 8 in file lab5_qn1.s
+   Uses
+      None
+Comment: data2 unused
+length 00000000
+
+Symbol: length
+   Definitions
+      At line 9 in file lab5_qn1.s
+   Uses
+      At line 13 in file lab5_qn1.s
+Comment: length used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 00000020
+
+Symbol: e
+   Definitions
+      At line 24 in file lab5_qn1.s
+   Uses
+      At line 24 in file lab5_qn1.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 11 in file lab5_qn1.s
+   Uses
+      None
+Comment: exp unused
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 17 in file lab5_qn1.s
+   Uses
+      At line 21 in file lab5_qn1.s
+Comment: loop used once
+3 symbols
+329 symbols in table

@@ -1,0 +1,22 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\1. AMRITA\SEMESTERS\SEM 5\Embedded Systems\Lab\Programs\LAB 9\LAB9_eg2\lab9_eg2.uvproj
+Project File Date:  12/22/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling lab9_eg2.c...
+lab9_eg2.c(17): error:  #137: expression must be a modifiable lvalue
+lab9_eg2.c(18): error:  #137: expression must be a modifiable lvalue
+lab9_eg2.c(23): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling lab9_eg2.c...
+lab9_eg2.c(23): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=548 RO-data=32 RW-data=4 ZI-data=1260  
+"lab9_eg2.axf" - 0 Error(s), 1 Warning(s).

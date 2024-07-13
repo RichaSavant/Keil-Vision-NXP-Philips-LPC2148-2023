@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\1. AMRITA\SEMESTERS\SEM 5\Embedded Systems\Lab\Programs\LAB 3\LAB3_as2\LAB3_as2.uvproj
+Project File Date:  11/09/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling lab3_as2.s...
+assembling lab3_as2_test.s...
+lab3_as2_test.s(19): error: A1167E: Invalid line start 
+lab3_as2_test.s(20): error: A1167E: Invalid line start 
+lab3_as2_test.s(21): warning: A1313W: Missing END directive at end of file
+Target not created
+Build target 'Target 1'
+assembling lab3_as2.s...
+assembling lab3_as2_test.s...
+lab3_as2_test.s(19): error: A1167E: Invalid line start 
+lab3_as2_test.s(20): error: A1167E: Invalid line start 
+lab3_as2_test.s(21): warning: A1313W: Missing END directive at end of file
+Target not created
+Build target 'Target 1'
+assembling lab3_as2.s...
+assembling lab3_as2_test.s...
+lab3_as2_test.s(19): error: A1167E: Invalid line start 
+lab3_as2_test.s(20): error: A1167E: Invalid line start 
+lab3_as2_test.s(21): warning: A1313W: Missing END directive at end of file
+Target not created
+Build target 'Target 1'
+assembling lab3_as2.s...
+linking...
+Program Size: Code=60 RO-data=4 RW-data=4 ZI-data=0  
+"LAB3_as2.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling lab3_as2.s...
+linking...
+Program Size: Code=56 RO-data=4 RW-data=4 ZI-data=0  
+"LAB3_as2.axf" - 0 Error(s), 0 Warning(s).

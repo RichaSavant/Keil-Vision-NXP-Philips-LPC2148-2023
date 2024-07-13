@@ -1,0 +1,55 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Find if a given number is multiple of 4. 
+    2 00000000         ;Assume the number to be in r1. 
+    3 00000000         ;If the number is a multiple then move 0xFF to r2 
+    4 00000000         ;else move 0xAA to r2.
+    5 00000000         
+    6 00000000                 AREA             LAB2_qn1 , CODE , READONLY
+    7 00000000         
+    8 00000000         ;In the binary number system, a number is divisible by 4
+                        if and only if it ends with two or more consecutive zer
+                       os (i.e., it's divisible by 2^2, which is 4 in decimal)
+    9 00000000         
+   10 00000000 E3A01004        mov              r1, #0x04
+   11 00000004         
+   12 00000004 E2111003        ands             r1, r1, #0x03 ;Because 3 --> 00
+                                                            11 and a no. is div
+                                                            isible by 4 if it e
+                                                            nds with 00 bits
+   13 00000008 03A020FF        moveq            r2, #0xFF
+   14 0000000C 13A020AA        movne            r2, #0xAA
+   15 00000010         
+   16 00000010 EAFFFFFE 
+                       e       b                e
+   17 00000014                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork -oLAB2_qn1.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=LAB2_qn1.lst LAB2_qn1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LAB2_qn1 00000000
+
+Symbol: LAB2_qn1
+   Definitions
+      At line 6 in file LAB2_qn1.s
+   Uses
+      None
+Comment: LAB2_qn1 unused
+e 00000010
+
+Symbol: e
+   Definitions
+      At line 16 in file LAB2_qn1.s
+   Uses
+      At line 16 in file LAB2_qn1.s
+Comment: e used once
+2 symbols
+322 symbols in table

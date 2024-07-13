@@ -1,0 +1,31 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\1. AMRITA\SEMESTERS\SEM 5\Embedded Systems\Lab\Programs\LAB 2\LAB2_qn2\LAB2_qn2.uvproj
+Project File Date:  11/01/2023
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling LAB2_qn2.s...
+LAB2_qn2.s(9): error: A1163E: Unknown opcode lab_shift , expecting opcode or Macro
+LAB2_qn2.s(10): error: A1106E: Missing comma
+Target not created
+Build target 'Target 1'
+assembling LAB2_qn2.s...
+LAB2_qn2.s(9): error: A1163E: Unknown opcode lab_shift , expecting opcode or Macro
+Target not created
+Build target 'Target 1'
+assembling LAB2_qn2.s...
+LAB2_qn2.s(9): error: A1163E: Unknown opcode lab_shift , expecting opcode or Macro
+Target not created
+Build target 'Target 1'
+assembling LAB2_qn2.s...
+LAB2_qn2.s(9): error: A1163E: Unknown opcode labshift , expecting opcode or Macro
+Target not created
+Build target 'Target 1'
+assembling LAB2_qn2.s...
+linking...
+Program Size: Code=36 RO-data=0 RW-data=0 ZI-data=0  
+"LAB2_qn2.axf" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,63 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;find the number of 1’s in a byte data stored in r5
+    2 00000000         ;Store the final count in r1.
+    3 00000000         
+    4 00000000                 AREA             LAB2_qn2 , CODE, READONLY
+    5 00000000 E3A05003        mov              r5 , #0x03
+    6 00000004 E3A02008        mov              r2 , #0x08  ;shift counter (8 b
+                                                            its)
+    7 00000008 E3A01000        mov              r1 , #0x00  ;result register
+    8 0000000C         
+    9 0000000C         label_shift
+   10 0000000C E1B050A5        movs             r5, r5 , lsr #1
+   11 00000010 22811001        addcs            r1, r1, #0x01 ;Add with prev ca
+                                                            rry
+   12 00000014         
+   13 00000014 E2422001        sub              r2 , r2 , #0x01 ;decrementing s
+                                                            hift counter
+   14 00000018 E3520000        cmp              r2, #0
+   15 0000001C 1AFFFFFA        bne              label_shift
+   16 00000020         
+   17 00000020         
+   18 00000020 EAFFFFFE 
+                       e       b                e
+   19 00000024                 end
+Command Line: --debug --xref --device=DARMP --apcs=interwork -oLAB2_qn2.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=LAB2_qn2.lst LAB2_qn2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LAB2_qn2 00000000
+
+Symbol: LAB2_qn2
+   Definitions
+      At line 4 in file LAB2_qn2.s
+   Uses
+      None
+Comment: LAB2_qn2 unused
+e 00000020
+
+Symbol: e
+   Definitions
+      At line 18 in file LAB2_qn2.s
+   Uses
+      At line 18 in file LAB2_qn2.s
+Comment: e used once
+label_shift 0000000C
+
+Symbol: label_shift
+   Definitions
+      At line 9 in file LAB2_qn2.s
+   Uses
+      At line 15 in file LAB2_qn2.s
+Comment: label_shift used once
+3 symbols
+323 symbols in table

@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC\Philips" -o "2way_switch.o" --omf_browse "2way_switch.crf" --depend "2way_switch.d" "2way_switch.c"

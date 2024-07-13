@@ -1,0 +1,135 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;find the first blank space in a string stored in memory
+                        location “string”. 
+    2 00000000         ;Store the position of the black space in memory locatio
+                       n “destination”.
+    3 00000000         
+    4 00000000                 AREA             data1 , DATA , READONLY
+    5 00000000 52 69 63 
+              68 61 20 
+              53 61 76 
+              61 6E 74 
+              00       string  dcb              "Richa Savant\0" ;\0 represents
+                                                             end of string (nul
+                                                            l bit)
+    6 0000000D         
+    7 0000000D                 AREA             data2, DATA, READWRITE
+    8 00000000 00000000 
+                       destination
+                               dcd              0
+    9 00000004         
+   10 00000004                 AREA             exp, CODE, READONLY
+   11 00000000         
+   12 00000000 E59F0028        ldr              r0, =string
+   13 00000004 E59F1028        ldr              r1, =destination
+   14 00000008 E3A09000        mov              r9 , #0x00
+   15 0000000C         
+   16 0000000C         loop
+   17 0000000C E4902001        ldr              r2, [r0] , #1
+   18 00000010 E2899001        add              r9, r9, #1
+   19 00000014 E3520000        cmp              r2, #"\0"
+   20 00000018 03E03000        moveq            r3, #-1
+   21 0000001C E3520020        cmp              r2, #" "
+   22 00000020 1AFFFFF9        bne              loop
+   23 00000024 0AFFFFFF        beq              space
+   24 00000028         
+   25 00000028         space
+   26 00000028 E5C19000        strb             r9, [r1]
+   27 0000002C EAFFFFFE 
+                       e       b                e
+   28 00000030                 end
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab5_qn3.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab5_qn3.lst lab5_qn3.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 4 in file lab5_qn3.s
+   Uses
+      None
+Comment: data1 unused
+string 00000000
+
+Symbol: string
+   Definitions
+      At line 5 in file lab5_qn3.s
+   Uses
+      At line 12 in file lab5_qn3.s
+Comment: string used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 7 in file lab5_qn3.s
+   Uses
+      None
+Comment: data2 unused
+destination 00000000
+
+Symbol: destination
+   Definitions
+      At line 8 in file lab5_qn3.s
+   Uses
+      At line 13 in file lab5_qn3.s
+Comment: destination used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 0000002C
+
+Symbol: e
+   Definitions
+      At line 27 in file lab5_qn3.s
+   Uses
+      At line 27 in file lab5_qn3.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 10 in file lab5_qn3.s
+   Uses
+      None
+Comment: exp unused
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 16 in file lab5_qn3.s
+   Uses
+      At line 22 in file lab5_qn3.s
+Comment: loop used once
+space 00000028
+
+Symbol: space
+   Definitions
+      At line 25 in file lab5_qn3.s
+   Uses
+      At line 23 in file lab5_qn3.s
+Comment: space used once
+4 symbols
+330 symbols in table

@@ -1,0 +1,129 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;perform addition of two 64 bits numbers. 
+    2 00000000         ;Assume data is stored in memory locations “data1” and “
+                       data2”. 
+    3 00000000         ;Each location will have two 32bit numbers stored. (IN A
+                       N ARRAY) 
+    4 00000000         ;Store the final summation result in location “sum”. 
+    5 00000000         ;Hint: ADC instruction should be used to perform second 
+                       word addition.
+    6 00000000         
+    7 00000000                 AREA             data_1 , DATA, READONLY
+    8 00000000 00000405 
+              00000000 data1   dcd              0x0405, 0x0000 ; each no. of 32
+                                                             bits  = 64
+    9 00000008 00000607 
+              00000000 data2   dcd              0x0607, 0x0000 ; each no. of 32
+                                                             bits  = 64
+   10 00000010         
+   11 00000010                 AREA             data_2, DATA, READWRITE
+   12 00000000 00000000 
+              00000000 sum     dcd              0x0000 , 0x0000
+   13 00000008         
+   14 00000008                 AREA             exp, CODE, READONLY
+   15 00000000 E59F0028        ldr              r0, =data1
+   16 00000004 E5901000        ldr              r1, [r0]
+   17 00000008 E5902004        ldr              r2, [r0,#4]
+   18 0000000C         
+   19 0000000C E59F3020        ldr              r3, =data2
+   20 00000010 E5934000        ldr              r4, [r3]
+   21 00000014 E5935004        ldr              r5, [r3,#4]
+   22 00000018         
+   23 00000018 E0816004        add              r6, r1, r4
+   24 0000001C E0A27005        adc              r7, r2, r5
+   25 00000020         
+   26 00000020 E59F8010        ldr              r8, =sum
+   27 00000024 E5886000        str              r6, [r8]
+   28 00000028 E5887004        str              r7, [r8,#4]
+   29 0000002C         
+   30 0000002C EAFFFFFE 
+                       e       b                e
+   31 00000030                 end
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab3_as3.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab3_as3.lst lab3_as3.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 8 in file lab3_as3.s
+   Uses
+      At line 15 in file lab3_as3.s
+Comment: data1 used once
+data2 00000008
+
+Symbol: data2
+   Definitions
+      At line 9 in file lab3_as3.s
+   Uses
+      At line 19 in file lab3_as3.s
+Comment: data2 used once
+data_1 00000000
+
+Symbol: data_1
+   Definitions
+      At line 7 in file lab3_as3.s
+   Uses
+      None
+Comment: data_1 unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data_2 00000000
+
+Symbol: data_2
+   Definitions
+      At line 11 in file lab3_as3.s
+   Uses
+      None
+Comment: data_2 unused
+sum 00000000
+
+Symbol: sum
+   Definitions
+      At line 12 in file lab3_as3.s
+   Uses
+      At line 26 in file lab3_as3.s
+Comment: sum used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 0000002C
+
+Symbol: e
+   Definitions
+      At line 30 in file lab3_as3.s
+   Uses
+      At line 30 in file lab3_as3.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 14 in file lab3_as3.s
+   Uses
+      None
+Comment: exp unused
+2 symbols
+329 symbols in table

@@ -1,0 +1,134 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;count the number of negative numbers in an array of 32-
+                       bit numbers stored in memory location “num” 
+    2 00000000         ;and the length of the array is stored in memory locatio
+                       n “len”. 
+    3 00000000         ;Store the final count in a memory location “result”.
+    4 00000000         
+    5 00000000                 AREA             data1 , DATA, READONLY
+    6 00000000 00000001 
+              00000002 
+              00000003 
+              FFFFFFFC num     dcd              1 , 2 , 3 , -4
+    7 00000010 00000004 
+                       len     dcd              4
+    8 00000014         
+    9 00000014                 AREA             data2, DATA, READWRITE
+   10 00000000 00      result  dcb              0
+   11 00000001         
+   12 00000001                 AREA             exp , CODE, READONLY
+   13 00000000 E59F0030        ldr              r0 , =num
+   14 00000004 E59F1030        ldr              r1 , =len
+   15 00000008 E5917000        ldr              r7 , [r1]
+   16 0000000C E59F902C        ldr              r9 ,=result
+   17 00000010 E3A02000        mov              r2, #0
+   18 00000014         
+   19 00000014         loop
+   20 00000014 E5903000        ldr              r3, [r0]
+   21 00000018 E1B03003        movs             r3, r3
+   22 0000001C 42822001        addmi            r2, r2, #1
+   23 00000020 E2477001        sub              r7, r7, #1
+   24 00000024 E3570000        cmp              r7, #0
+   25 00000028 E2800004        add              r0, r0, #4
+   26 0000002C 1AFFFFF8        bne              loop
+   27 00000030         
+   28 00000030 E5892000        str              r2 , [r9]
+   29 00000034 EAFFFFFE 
+                       e       b                e
+   30 00000038                 end
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --device=DARMP --apcs=interwork -olab4_qn1.o -IC:\
+Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=lab4_qn1.lst lab4_qn1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 5 in file lab4_qn1.s
+   Uses
+      None
+Comment: data1 unused
+len 00000010
+
+Symbol: len
+   Definitions
+      At line 7 in file lab4_qn1.s
+   Uses
+      At line 14 in file lab4_qn1.s
+Comment: len used once
+num 00000000
+
+Symbol: num
+   Definitions
+      At line 6 in file lab4_qn1.s
+   Uses
+      At line 13 in file lab4_qn1.s
+Comment: num used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data2 00000000
+
+Symbol: data2
+   Definitions
+      At line 9 in file lab4_qn1.s
+   Uses
+      None
+Comment: data2 unused
+result 00000000
+
+Symbol: result
+   Definitions
+      At line 10 in file lab4_qn1.s
+   Uses
+      At line 16 in file lab4_qn1.s
+Comment: result used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+e 00000034
+
+Symbol: e
+   Definitions
+      At line 29 in file lab4_qn1.s
+   Uses
+      At line 29 in file lab4_qn1.s
+Comment: e used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 12 in file lab4_qn1.s
+   Uses
+      None
+Comment: exp unused
+loop 00000014
+
+Symbol: loop
+   Definitions
+      At line 19 in file lab4_qn1.s
+   Uses
+      At line 26 in file lab4_qn1.s
+Comment: loop used once
+3 symbols
+330 symbols in table
